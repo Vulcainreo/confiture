@@ -1,0 +1,2 @@
+# confiture
+Configuration auditing tool
