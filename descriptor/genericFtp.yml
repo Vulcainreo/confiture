@@ -1,0 +1,75 @@
+---
+title: "Generic FTP"
+author: "Vulcainreo"
+version: "1.0"
+date: "Octobre 2023"
+tests:
+  - test:
+    category: "Système"
+    control: "Version"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Système"
+    control: "Support éditeur"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Authentification & autorisation"
+    control: "Actions anonymes"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Authentification & autorisation"
+    control: "Dossiers légitimes en lecture"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Authentification & autorisation"
+    control: "Dossiers légitimes en écriture"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Authentification & autorisation"
+    control: "xx"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Surface d'attaque"
+    control: "Support IPv4 / IPv6"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Surface d'attaque"
+    control: "Chiffrement des communications"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Defense en profondeur"
+    control: "Chroot des utilisateurs"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Jounalisation"
+    control: "Activation et destination"
+    command: ""
+    lookup: ""
+    referential: ""

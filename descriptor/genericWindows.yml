@@ -1,0 +1,145 @@
+---
+title: "Generic Windows"
+author: "Vulcainreo"
+version: "1.0"
+date: "Octobre 2023"
+tests:
+  - test:
+    id: ""
+    category: "Socle système"
+    control: "OS supporté"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Socle système"
+    control: "Niveau des correctifs de sécurité"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Compte et privilèges"
+    control: Poliitique de mot de passe"
+    command: ""
+    lookup: |
+      Age maximum
+      Taille maximale
+      Complexité
+      Historique
+      Blocage / antibrutefoce
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Compte et privilèges"
+    control: Protection et défense"
+    command: ""
+    lookup: |
+      Blocage / antibrutefoce
+      Configuration de l’expiration à risque
+      Désactivation du compte local « administrateur »
+      Renommage des comptes par défaut (administrateur et invité)
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Compte et privilèges"
+    control: "Stockage"
+    command: ""
+    lookup: |
+      Stockage à risque
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Compte et privilèges"
+    control: Segmentation"
+    command: ""
+    lookup: |
+      Segmentation utilisateur / administrateur
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque"
+    control: "Comptes illégitimes"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque"
+    control: "Services en écoute"
+    command: ""
+    lookup: ""
+    referential: ""
+
+
+  - test:
+    id: ""
+    category: "Surface d'attaque"
+    control: "Partage SMB"
+    command: ""
+    lookup: |
+      exposition
+      SMBv1 / Signature
+    referential: ""
+
+
+  - test:
+    id: ""
+    category: "Surface d'attaque"
+    control: "Controle disstant"
+    command: ""
+    lookup: ""
+    referential: ""
+
+
+  - test:
+    id: ""
+    category: "Surface d'attaque"
+    control: "Chiffrement BitLocker"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque"
+    control: "Services inutiles / illégitimes"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque"
+    control: "Tache planifiée illégitime"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Journalisation"
+    control: "Type de journaux"
+    command: ""
+    lookup: |
+        Activité de connexion au système
+        Changement de politique
+        Activité système
+        Transcription Powershell
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Défense en profondeur"
+    control: "Etat et version Antivirus"
+    command: ""
+    lookup: ""
+    referential: ""

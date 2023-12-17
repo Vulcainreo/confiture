@@ -1,0 +1,8 @@
+---
+title: "Vulnerabilities"
+author: "Vulcainreo"
+version: "1.0"
+date: "October 2023"
+vulns:
+  - vuln:
+    category: "Système"

@@ -1,0 +1,253 @@
+---
+title: "Generic Linux"
+author: "Vulcainreo"
+version: "1.0"
+date: "Octobre 2023"
+tests:
+  - test:
+    id: ""
+    category: "Système"
+    control: "OS supporté"
+    command: "cat /etc/*-release > release.txt; uname -a > uname.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Système"
+    control: "Dernier correctifs"
+    command: "cat /var/log/apt/history.log > update.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Authentification & autorisation"
+    control: "Comptes locaux"
+    command: "getent passwd > passwd.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Authentification & autorisation"
+    control: "Groupes locaux"
+    command: "getent group > group.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Authentification & autorisation"
+    control: "Accès privilégié"
+    command: "cat /etc/sudoers > sudoers.txt"
+    lookup: ""
+    referential: ""
+
+
+  - test:
+    id: ""
+    category: "Authentification & autorisation"
+    control: "Service SSH"
+    command: "ps aux | grep ssh > ssh_service.txt; cat /etc/ssh/ssh_config* > ssh.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Authentification & autorisation"
+    control: "Configguration PAM"
+    command: "cat /etc/login.defs > logindef.txt; cat /etc/pam.d/* > pam.conf"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "Application illégitime"
+    command: "dpkg -l > dpkg.txt"
+    lookup: "grep 'gcc \\| g++"
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "Module noyau"
+    command: "sysctl -a > sysctl-a.txt"
+    lookup: |
+          kernel.sysrq => 0
+          fs.suid_dumpable => 0
+          fs.protected_symlinks => 1
+          fs.protected_hardlinks => 1
+          kernel.randomize_va_space => 2
+          vm.mmap_min_addr => 65536
+          kernel.pid_max => 65536
+          kernel.kptr_restrict => 1
+          kernel.dmesg_restrict => 1
+          kernel.perf_event_paranoid => 2
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "Module réseau"
+    command: "sysctl -a > sysctl-a.txt"
+    lookup: |
+          net.ipv4.icmp_echo_ignore_broadcasts => 1
+          net.ipv4.tcp_syncookies => 1
+          net.ipv4.ip_forward => 0
+          net.ipv6.conf.all.forwarding => 0
+          net.ipv4.conf.*.send_redirects => 0
+          net.ipv4.conf.*.rp_filter => 1
+          net.ipv4.conf.all.accept_source_route => 0
+          net.ipv6.conf.*.accept_source_route => 0
+          net.ipv4.conf.*.accept_redirects => 0
+          net.ipv6.conf.*.accept_redirects => 0
+          net.ipv4.conf.*.secure_redirects => 0
+
+          grep "icmp_echo_ignore_broadcasts\|tcp_syncookies\|ip_forward\|forwarding\|send_redirects\|rp_filter\|accept_source_route\|accept_source_route\|accept_redirects\|secure_redirects"
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "Variable d'environnement à risque"
+    command: "env > env.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "Shell reconnus par le système"
+    command: "cat /etc/shells > shells.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "Module kernel"
+    command: "find /etc/modprobe.d -type f -exec ls -aiL {} \\; -exec cat {} \\; > moduleKernel.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "Permission shadow"
+    command: "ls -alLi /etc/shadow > permShadow.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "Points de montage"
+    command: "mount > mount.txt; cat /etc/fstab > fstab.txt; lsblk > lsblk.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "Taches plannifiées"
+    command: "cat /etc/cron.d/* > cron.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "Processus en cours"
+    command: "ps faux > ps-faux.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "SUID"
+    command: "find / -type f -perm -004000 -exec ls -ailL {} \\; -exec file {} \\; > suid.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "GUID"
+    command: "find / -type f -perm -002000 -exec ls -ailL {} \\; -exec file {} \\; > guid.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "Répertoire en écriture à tout le monde"
+    command: "find / -type d -perm -002 -exec ls -ailL {} \\; > worldWriteDir.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "Fichiers en écriture à tout le monde"
+    command: "find / -type f -perm -002 -exec ls -ailL {} \\; > worldWriteFile.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque réseau"
+    control: "IP et routage"
+    command: "arp -a > arpa.txt; ip a > ipa.txt; route > route.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque réseau"
+    control: "DNS et hosts"
+    command: "cat /etc/resolv.conf > resolv.txt; cat /etc/hosts > hosts.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque réseau"
+    control: "Service en écoute"
+    command: "netstat -lnutpa > netstat.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque réseau"
+    control: "Firewall local"
+    command: "iptables -L -v -n > iptables.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Journalisation"
+    control: "Système de journalisation"
+    command: "cat /etc/syslog-ng/syslog-ng.conf > syslog-ng.txt; cat /etc/rsyslog.conf > rsyslog.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Journalisation"
+    control: "Synchronisation des temps"
+    command: "cat /etc/ntp.conf > ntp.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Journalisation"
+    control: "Droits d'accès aux journaux"
+    command: "find /var/log -type f -exec ls -ailL {} \\; > varLog.txt"
+    lookup: ""
+    referential: ""

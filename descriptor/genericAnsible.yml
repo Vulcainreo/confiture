@@ -1,0 +1,32 @@
+#https://climbtheladder.com/10-ansible-security-best-practices/
+---
+title: "Generic Ansible"
+author: "Vulcainreo"
+version: "1.0"
+date: "Octobre 2023"
+tests:
+  - test:
+    category: "xxx"
+    control: "Usage de Ansible Vault"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Système"
+    control: "Accès  éditeur"
+    command: ""
+    lookup: ""
+    referential: ""
+
+
+# Accès limité à la machine de controle
+# Création de compte séparé pour l'exécution des scripts Ansible
+# Lancement des playbook en readonly
+#   - ansible_become_method=sudo dans le fichier ansible.cfg
+# Ne pas exécuter les playbook en root
+# Utiliser des clés SSH
+# Sécuriser le service SSH
+# Limiter les ports / services exposés
+# Configuré des règles firewall sur les postes managés
+# Le fichier inventaire doit être chiffré

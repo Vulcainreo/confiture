@@ -1,0 +1,20 @@
+#https://docs.centreon.com/fr/docs/administration/secure-platform/
+---
+title: "Centreon"
+author: "Vulcainreo"
+version: "1.0"
+date: "Octobre 2023"
+tests:
+  - test:
+    category: "xxx"
+    control: "Usage de Ansible Vault"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Système"
+    control: "Accès  éditeur"
+    command: ""
+    lookup: ""
+    referential: ""

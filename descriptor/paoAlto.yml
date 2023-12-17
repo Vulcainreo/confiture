@@ -1,0 +1,118 @@
+---
+title: "Paoalto"
+author: "Vulcainreo"
+version: "1.0"
+date: "Decembre 2023"
+tests:
+  - test:
+    category: "Système"
+    control: "Version & support éditeur"
+    command: "show system info; request license info"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Authentification & autorisation"
+    control: "Utilisateurs, groupes et profiles"
+    command: "show session info; show session id <session-id>"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Authentification & autorisation"
+    control: "Méthodes d'authentification"
+    command: "> show admins all"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Authentification & autorisation"
+    control: "Politique de mot de passe"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Surface d'attaque"
+    control: "Interface et protocole d'administration"
+    command: "show running security-policy"
+    lookup: ""
+    referential: ""
+
+
+  - test:
+    category: "Politique de filtrage"
+    control: "Règles trop permissive"
+    command: "show routing route; show running nat-policy;  show vlan all"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Politique de filtrage"
+    control: "Traffic interdit par défaut"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Politique de filtrage"
+    control: "Segmentation en zone"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Defense en profondeur"
+    control: "Module de sécurité (ex.: WAF)"
+    command: ""
+    lookup: |
+    referential: ""
+
+  - test:
+    category: "Defense en profondeur"
+    control: "Fortiguard"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Defense en profondeur"
+    control: "Antivirus"
+    command: ""
+    lookup: |
+    referential: ""
+
+  - test:
+    category: "Couche applicative / module"
+    control: "Configuration du VPN"
+    command: ""
+    lookup: |
+    referential: ""
+
+  - test:
+    category: "Jounalisation"
+    control: "Activation, stockage et destination"
+    command: "show system logdb-quota"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Jounalisation"
+    control: "Type de journaux"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Jounalisation"
+    control: "Synchronisation des temps"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Surveillance"
+    control: "Configuration SNMP"
+    command: ""
+    lookup: ""
+    referential: ""

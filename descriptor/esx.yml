@@ -1,0 +1,67 @@
+---
+title: "ESX"
+author: "Vulcainreo"
+version: "1.0"
+date: "Octobre 2023"
+tests:
+  - test:
+    id: ""
+    category: "System"
+    control: "Supported OS"
+    command: |
+      esxcli system version get
+      esxcli system hostname get
+      esxcli system welcomemsg get
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Authentication"
+    control: ""
+    command: "esxcli system account list"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Process"
+    control: ""
+    command: |
+      esxcli vm process list
+      esxcli storage filesystem list
+      esxcli storage nfs list
+      esxcli software vib list
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Network"
+    control: ""
+    command: |
+      esxcli network ip connection list
+      esxcli network nic list
+      esxcli network ip interface list
+      esxcli network vswitch standard list
+      esxcli network firewall get
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Log management"
+    control: "SNMP"
+    command: |
+      esxcli system snmp get
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Resources"
+    control: "Virtual machine"
+    command: |
+      esxcli network vm list
+    lookup: ""
+    referential: ""

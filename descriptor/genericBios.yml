@@ -1,0 +1,65 @@
+---
+title: "Generic BIOS"
+author: "Vulcainreo"
+version: "1.0"
+date: "Octobre 2023"
+tests:
+  - test:
+    id: ""
+    category: "Système"
+    control: "Version du BIOS"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Système"
+    control: "Protection par mot de passe"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Système"
+    control: "Secure boot activé"
+    command: ""
+    lookup: ""
+    referential: ""
+
+
+  - test:
+    id: ""
+    category: "Système"
+    control: "TPM utilisé"
+    command: ""
+    lookup: ""
+    referential: ""
+
+
+  - test:
+    id: ""
+    category: "Système"
+    control: "Limitation de support de démarrage"
+    command: ""
+    lookup: ""
+    referential: ""
+
+
+  - test:
+    id: ""
+    category: "Système"
+    control: "Principe du moindre privilège"
+    command: ""
+    lookup: |
+      virtualisation
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Système"
+    control: "Désactivation des ports USB"
+    command: ""
+    lookup: ""
+    referential: ""

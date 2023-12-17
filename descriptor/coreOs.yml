@@ -1,0 +1,43 @@
+---
+title: "CoreOS"
+author: "Vulcainreo"
+version: "1.0"
+date: "Decembre 2023"
+tests:
+  - test:
+    category: "Remote listening services"
+    control: "Disabling sshd"
+    command: "systemctl mask sshd.socket"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Local services"
+    control: "Local users (core wheel)"
+    command: "gpasswd"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Local services"
+    control: "Local users (docker)"
+    command: "gpasswd"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Local services"
+    control: "Local users (rkt fetch)"
+    command: "gpasswd"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Advanced"
+    control: "Simultaneous Multi-Threading"
+    command: "cat /usr/share/oem/grub.cfg"
+    lookup: ""
+    referential: ""
+
+
+# https://github.com/coreos/docs/blob/master/os/disabling-smt.md

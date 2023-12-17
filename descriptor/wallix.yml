@@ -1,0 +1,111 @@
+---
+title: "Wallix"
+author: "Vulcainreo"
+version: "1.0"
+date: "Octobre 2023"
+tests:
+  - test:
+    category: "Système"
+    control: "Version et support éditeur"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Système"
+    control: "Système de fichier"
+    command: ""
+    lookup: |
+        One-time password
+        Expiration de la licence
+        Chiffrement du disque
+        Stockage distant
+        SIEM
+    referential: ""
+
+  - test:
+    category: "Système"
+    control: "Wallix engine"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Authentification et autorisation"
+    control: "Méthode d'authentification"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Authentification et autorisation"
+    control: "Politique de mot de passe"
+    command: ""
+    lookup: ""
+    referential: ""
+
+
+  - test:
+    category: "Captation et bastionnement"
+    control: "Protocole SSH"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Captation et bastionnement"
+    control: "Protocole RDP"
+    command: ""
+    lookup: |
+        Timeout lors de la connexion
+        Expiration de la session
+        Mode transparent
+        Log
+        TLS fallback
+        Version TLS minimum
+        Suites de chiffrement
+        Authentification NLA
+        Presse-papier
+        Log clavier
+        Log presse-papier
+        Log file-system
+        Cache bitmap
+        Port
+        Timestamp
+        Niveau de chiffrement
+        Enregistrement des traces
+        Mot de passe certificat
+        Client shell
+        Crash dump
+    referential: ""
+
+  - test:
+    category: "Surface d'attaque"
+    control: "Configuration de l'API"
+    command: ""
+    lookup: |
+          Expiration de la session
+          Allow-origin
+          Nb maximum de session
+          Récupération des identifiants
+          Debug
+    referential: ""
+
+
+  - test:
+    category: "Surface d'attaque"
+    control: "Configuration du service SSH"
+    command: ""
+    lookup: |
+          Connexion timeout
+          Authentification timeout
+          Expiration de la session
+          Mode transparent
+          Identifiant par défaut
+          Algorithmes autorisés pour les clefs hôte
+          Algorithmes autorisés pour les clefs clients
+          Algorithmes autorisés pour l'échange des clés
+          Algorithmes de chiffrement des communications
+          Algorithmes de controle d'intégrité
+          Compression
+    referential: ""

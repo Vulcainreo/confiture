@@ -1,0 +1,133 @@
+---
+title: "Fortigate"
+author: "Vulcainreo"
+version: "1.0"
+date: "Octobre 2023"
+tests:
+  - test:
+    category: "Système"
+    control: "Version & support éditeur"
+    command: "get system status"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Authentification & autorisation"
+    control: "Utilisateurs, groupes et profiles"
+    command: "get user group; get user local"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Authentification & autorisation"
+    control: "Méthodes d'authentification"
+    command: "get authentication setting; get user setting"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Authentification & autorisation"
+    control: "Politique de mot de passe"
+    command: "get system password-policy"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Surface d'attaque"
+    control: "Interface et protocole d'administration"
+    command: "get system interface"
+    lookup: ""
+    referential: ""
+
+
+  - test:
+    category: "Politique de filtrage"
+    control: "Règles trop permissive"
+    command: "show firewall policy"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Politique de filtrage"
+    control: "Traffic interdit par défaut"
+    command: "show firewall policy"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Politique de filtrage"
+    control: "Segmentation en zone"
+    command: "show firewall policy"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Defense en profondeur"
+    control: "Module de sécurité (ex.: WAF)"
+    command: "get waf profile "
+    lookup: |
+          signature – main-class 100000000
+    referential: ""
+
+  - test:
+    category: "Defense en profondeur"
+    control: "Fortiguard"
+    command: "get system fortiguard "
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Defense en profondeur"
+    control: "Antivirus"
+    command: "get antivirus settings"
+    lookup: |
+            Scan des indésirables
+            override-timeout
+            inspection-mode
+            http
+            ftp
+            imap
+            pop3
+            smtp
+    referential: ""
+
+  - test:
+    category: "Couche applicative / module"
+    control: "Configuration du VPN"
+    command: "get vpn ike gateway; get vpn certificate setting; get vpn ssl setting"
+    lookup: |
+            Algorithme de signature
+            Expiration
+            Sujet
+            Algorithme de la clef
+            Type de chiffrement SSL
+            Configuration IPSEC
+    referential: ""
+
+  - test:
+    category: "Jounalisation"
+    control: "Activation, stockage et destination"
+    command: "get log setting; get log syslogd setting"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Jounalisation"
+    control: "Type de journaux"
+    command: "get log eventfilter"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Jounalisation"
+    control: "Synchronisation des temps"
+    command: "get system ntp"
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Surveillance"
+    control: "Configuration SNMP"
+    command: "get system snmp sysinfo"
+    lookup: ""
+    referential: ""

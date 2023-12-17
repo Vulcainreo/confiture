@@ -1,0 +1,26 @@
+---
+title: "FortiAuthenticator"
+author: "Vulcainreo"
+version: "1.0"
+date: "Octobre 2023"
+tests:
+  - test:
+    category: "Système"
+    control: "Version et support"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Surface d'attaque"
+    control: "Interface réseau publiée vers des réseaux non sûrs"
+    command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    category: "Surface d'attaque"
+    control: "Interface réseau dédiés aux taches d'administration"
+    command: ""
+    lookup: ""
+    referential: ""
