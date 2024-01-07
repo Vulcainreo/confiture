@@ -1,0 +1,49 @@
+---
+title: "Quantum Scalar"
+author: "Vulcainreo"
+version: "1.0"
+date: "January 2024"
+relatedContent: |
+  https://data2.manualslib.com/pdf6/123/12223/1222228-quantum/scalar_i6000.pdf?b2b6ecebb338de7a83b217a2312cc024&take=binary
+tests:
+  - test:
+    category: "Système"
+    control: "Version & support éditeur"
+    command: "show firmware revisions"
+    lookup: ""
+
+tests:
+  - test:
+    category: "Application"
+    control: "Status des médias, bibliothèque et partitions"
+    command: "show media all / show library status / show partition"
+    lookup: ""
+
+tests:
+  - test:
+    category: "Application"
+    control: "Configuration des bibliothèques"
+    command: "show library configuration"
+    lookup: ""
+
+
+tests:
+  - test:
+    category: "Réseau"
+    control: "Configuration du réseau"
+    command: "show network information"
+    lookup: ""
+
+tests:
+  - test:
+    category: "Authentification"
+    control: "Utilisateurs configurés"
+    command: "Setup > Users configuration"
+    lookup: ""
+
+tests:
+  - test:
+    category: "Authentification"
+    control: "Interface exposées"
+    command: "Setup > Security configuration > Services"
+    lookup: ""

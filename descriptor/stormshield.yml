@@ -1,0 +1,13 @@
+---
+title: "Stormshield"
+author: "Vulcainreo"
+version: "1.0"
+date: "January 2024"
+relatedContent: |
+
+tests:
+  - test:
+    category: "Système"
+    control: "Version & support éditeur"
+    command: ""
+    lookup: ""
