@@ -248,7 +248,7 @@ tests:
     id: ""
     category: "Journalisation"
     control: "Synchronisation des temps"
-    command: "cat /etc/ntp.conf > ntp.txt"
+    command: "cat /etc/ntp.conf > ntp.txt ; cat /etc/chrony.conf > chrony.txt"
     lookup: ""
     referential: ""
 
