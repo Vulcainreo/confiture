@@ -40,7 +40,7 @@ tests:
     id: ""
     category: "Authentification & autorisation"
     control: "Accès privilégié"
-    command: "cat /etc/sudoers > sudoers.txt"
+    command: "cat /etc/sudoers > sudoers.txt; cat /etc/sudoers.d/* > sudoers2.txt"
     lookup: ""
     referential: ""
 
