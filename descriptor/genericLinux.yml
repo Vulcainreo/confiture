@@ -48,11 +48,19 @@ tests:
   - test:
     id: ""
     category: "Authentification & autorisation"
-    control: "Service SSH"
-    command: "ps aux | grep ssh > ssh_service.txt; cat /etc/ssh/ssh_config* > ssh.txt"
+    control: "Service SSHD"
+    command: "ps aux | grep ssh > sshd_service.txt; cat /etc/ssh/sshd_config* > sshd.txt"
     lookup: ""
     referential: ""
 
+  - test:
+    id: ""
+    category: "Authentification & autorisation"
+    control: "Service SSHD"
+    command: "cat /etc/ssh/sshd_config.d/* > sshd2.txt"
+    lookup: ""
+    referential: ""
+    
   - test:
     id: ""
     category: "Authentification & autorisation"
