@@ -240,7 +240,7 @@ tests:
     id: ""
     category: "Journalisation"
     control: "Système de journalisation"
-    command: "cat /etc/syslog-ng/syslog-ng.conf > syslog-ng.txt; cat /etc/rsyslog.conf > rsyslog.txt"
+    command: "cat /etc/syslog-ng/syslog-ng.conf > syslog-ng.txt; cat /etc/rsyslog.conf > rsyslog.txt; cat /etc/rsyslog.d/* > rsyslog2.txt"
     lookup: ""
     referential: ""
 
@@ -248,7 +248,7 @@ tests:
     id: ""
     category: "Journalisation"
     control: "Synchronisation des temps"
-    command: "cat /etc/ntp.conf > ntp.txt ; cat /etc/chrony.conf > chrony.txt"
+    command: "cat /etc/ntp.conf > ntp.txt; cat /etc/chrony.conf > chrony.txt"
     lookup: ""
     referential: ""
 
