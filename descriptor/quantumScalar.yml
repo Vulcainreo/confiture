@@ -12,36 +12,30 @@ tests:
     command: "show firmware revisions"
     lookup: ""
 
-tests:
   - test:
     category: "Application"
     control: "Status des médias, bibliothèque et partitions"
     command: "show media all / show library status / show partition"
     lookup: ""
 
-tests:
   - test:
     category: "Application"
     control: "Configuration des bibliothèques"
     command: "show library configuration"
     lookup: ""
 
-
-tests:
   - test:
     category: "Réseau"
     control: "Configuration du réseau"
     command: "show network information"
     lookup: ""
 
-tests:
   - test:
     category: "Authentification"
     control: "Utilisateurs configurés"
     command: "Setup > Users configuration"
     lookup: ""
 
-tests:
   - test:
     category: "Authentification"
     control: "Interface exposées"
