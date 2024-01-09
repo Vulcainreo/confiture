@@ -40,7 +40,7 @@ tests:
     id: ""
     category: "Authentification & autorisation"
     control: "Accès privilégié"
-    command: "cat /etc/sudoers > sudoers.txt"
+    command: "cat /etc/sudoers > sudoers.txt; cat /etc/sudoers.d/* > sudoers2.txt"
     lookup: ""
     referential: ""
 
@@ -48,11 +48,19 @@ tests:
   - test:
     id: ""
     category: "Authentification & autorisation"
-    control: "Service SSH"
-    command: "ps aux | grep ssh > ssh_service.txt; cat /etc/ssh/ssh_config* > ssh.txt"
+    control: "Service SSHD"
+    command: "ps aux | grep ssh > sshd_service.txt; cat /etc/ssh/sshd_config* > sshd.txt"
     lookup: ""
     referential: ""
 
+  - test:
+    id: ""
+    category: "Authentification & autorisation"
+    control: "Service SSHD"
+    command: "cat /etc/ssh/sshd_config.d/* > sshd2.txt"
+    lookup: ""
+    referential: ""
+    
   - test:
     id: ""
     category: "Authentification & autorisation"
@@ -232,7 +240,7 @@ tests:
     id: ""
     category: "Journalisation"
     control: "Système de journalisation"
-    command: "cat /etc/syslog-ng/syslog-ng.conf > syslog-ng.txt; cat /etc/rsyslog.conf > rsyslog.txt"
+    command: "cat /etc/syslog-ng/syslog-ng.conf > syslog-ng.txt; cat /etc/rsyslog.conf > rsyslog.txt; cat /etc/rsyslog.d/* > rsyslog2.txt"
     lookup: ""
     referential: ""
 
@@ -240,7 +248,7 @@ tests:
     id: ""
     category: "Journalisation"
     control: "Synchronisation des temps"
-    command: "cat /etc/ntp.conf > ntp.txt"
+    command: "cat /etc/ntp.conf > ntp.txt; cat /etc/chrony.conf > chrony.txt"
     lookup: ""
     referential: ""
 
