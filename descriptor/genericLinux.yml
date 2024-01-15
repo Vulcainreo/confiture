@@ -16,7 +16,15 @@ tests:
     id: ""
     category: "Système"
     control: "Dernier correctifs"
-    command: "cat /var/log/apt/history.log > update.txt"
+    command: "cat /var/log/apt/history.log > update-apt.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Système"
+    control: "Dernier correctifs"
+    command: "cat /var/log/dnf.log > update-dnf.txt"
     lookup: ""
     referential: ""
 
