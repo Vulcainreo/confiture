@@ -238,6 +238,14 @@ tests:
 
   - test:
     id: ""
+    category: "Surface d'attaque réseau"
+    control: "Firewalld local"
+    command: "firewall-cmd --list-all > firewalld.txt; nft list ruleset > nftables.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
     category: "Journalisation"
     control: "Système de journalisation"
     command: "cat /etc/syslog-ng/syslog-ng.conf > syslog-ng.txt; cat /etc/rsyslog.conf > rsyslog.txt; cat /etc/rsyslog.d/* > rsyslog2.txt"
