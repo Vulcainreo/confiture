@@ -73,7 +73,7 @@ tests:
     id: ""
     category: "Surface d'attaque locale"
     control: "Application illégitime"
-    command: "dpkg -l > dpkg.txt"
+    command: "dpkg -l > dpkg.txt; rpm -qa > dpkg.txt"
     lookup: "grep 'gcc \\| g++"
     referential: ""
 
