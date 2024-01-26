@@ -15,8 +15,16 @@ tests:
   - test:
     id: ""
     category: "Système"
-    control: "Dernier correctifs"
-    command: "cat /var/log/apt/history.log > update.txt"
+    control: "Derniers correctifs"
+    command: "cat /var/log/apt/history.log > update-apt.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Système"
+    control: "Derniers correctifs"
+    command: "cat /var/log/dnf.log > update-dnf.txt"
     lookup: ""
     referential: ""
 
@@ -64,7 +72,7 @@ tests:
   - test:
     id: ""
     category: "Authentification & autorisation"
-    control: "Configguration PAM"
+    control: "Configuration PAM"
     command: "cat /etc/login.defs > logindef.txt; cat /etc/pam.d/* > pam.conf"
     lookup: ""
     referential: ""
@@ -73,7 +81,7 @@ tests:
     id: ""
     category: "Surface d'attaque locale"
     control: "Application illégitime"
-    command: "dpkg -l > dpkg.txt"
+    command: "dpkg -l > dpkg.txt; rpm -qa > dpkg.txt"
     lookup: "grep 'gcc \\| g++"
     referential: ""
 
@@ -191,7 +199,7 @@ tests:
   - test:
     id: ""
     category: "Surface d'attaque locale"
-    control: "Répertoire en écriture à tout le monde"
+    control: "Répertoires en écriture à tout le monde"
     command: "find / -type d -perm -002 -exec ls -ailL {} \\; > worldWriteDir.txt"
     lookup: ""
     referential: ""
@@ -233,6 +241,14 @@ tests:
     category: "Surface d'attaque réseau"
     control: "Firewall local"
     command: "iptables -L -v -n > iptables.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque réseau"
+    control: "Firewalld local"
+    command: "firewall-cmd --list-all > firewalld.txt; nft list ruleset > nftables.txt"
     lookup: ""
     referential: ""
 
