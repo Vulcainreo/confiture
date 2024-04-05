@@ -1,0 +1,28 @@
+---
+title: "Nginx"
+author: "Vulcainreo"
+version: "1.0"
+date: "March 2024"
+tests:
+  - test:
+    id: ""
+    category: ""
+    control: ""
+    command: |
+    lookup: ""
+    referential: ""
+
+
+###
+# Version du composant
+# Légitimité des modules installés
+# Légitimité des virtualhost et redirection
+# Privilège d'exécution
+# Permission des dossiers
+# Configuration réseau à risque
+# Divulgation d'information
+# Journalisation des accès / erreur et stockage des journaux
+# Configuration du chiffrement
+# Configuration à risque des boucles de décision
+# Configuration des entêtes HTTP
+####

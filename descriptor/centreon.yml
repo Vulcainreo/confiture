@@ -1,9 +1,10 @@
-#https://docs.centreon.com/fr/docs/administration/secure-platform/
 ---
 title: "Centreon"
 author: "Vulcainreo"
 version: "1.0"
 date: "Octobre 2023"
+source: |
+  https://docs.centreon.com/fr/docs/administration/secure-platform/
 tests:
   - test:
     category: "xxx"

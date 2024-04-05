@@ -3,7 +3,7 @@ title: "Quantum Scalar"
 author: "Vulcainreo"
 version: "1.0"
 date: "January 2024"
-relatedContent: |
+source: |
   https://data2.manualslib.com/pdf6/123/12223/1222228-quantum/scalar_i6000.pdf?b2b6ecebb338de7a83b217a2312cc024&take=binary
 tests:
   - test:

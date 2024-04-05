@@ -1,0 +1,26 @@
+---
+title: "Jitsi"
+author: "Vulcainreo"
+version: "1.0"
+date: "March 2024"
+tests:
+  - test:
+    id: ""
+    category: ""
+    control: ""
+    command: |
+    lookup: ""
+    referential: ""
+
+
+
+# Version du composant
+# Configuration du DNS
+# Configuration des dépôts source et signature
+# Configuration du parefeu local
+# Configuration du chiffrement
+# Authentification et conférence anonyme
+# Légitimité des utilisateurs configurés
+# Configuration du debug à risque
+# Configuration à risque vis à vis du déni de service
+# Journalisation

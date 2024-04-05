@@ -1,0 +1,25 @@
+---
+title: "Generic database"
+author: "Vulcainreo"
+version: "1.0"
+date: "March 2024"
+tests:
+  - test:
+    id: ""
+    category: ""
+    control: ""
+    command: |
+    lookup: ""
+    referential: ""
+
+
+
+
+# Version du composant et support actif
+# Stockage à risque des journaux
+# Légitimité des utilisateurs configurés
+# Principe du moindre privilège appliqué
+# Méthode de connexion
+# Configuration du runtime
+# Mécanisme de réplication à risque
+# Configuration des sauvegardes

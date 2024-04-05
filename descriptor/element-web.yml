@@ -1,0 +1,19 @@
+---
+title: "Element web"
+author: "Vulcainreo"
+version: "1.0"
+date: "March 2024"
+tests:
+  - test:
+    id: ""
+    category: ""
+    control: ""
+    command: |
+    lookup: ""
+    referential: ""
+
+
+# Version du composant
+# Exposition à risque du serveur
+# Gestion de chiffrement à risque
+# Journalisation des activités

@@ -3,6 +3,8 @@ title: "CoreOS"
 author: "Vulcainreo"
 version: "1.0"
 date: "Decembre 2023"
+source: |
+  https://github.com/coreos/docs/blob/master/os/disabling-smt.md
 tests:
   - test:
     category: "Remote listening services"
@@ -38,6 +40,3 @@ tests:
     command: "cat /usr/share/oem/grub.cfg"
     lookup: ""
     referential: ""
-
-
-# https://github.com/coreos/docs/blob/master/os/disabling-smt.md

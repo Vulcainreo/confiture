@@ -1,0 +1,29 @@
+---
+title: "Jboss"
+author: "Vulcainreo"
+version: "1.0"
+date: "March 2024"
+tests:
+  - test:
+    id: ""
+    category: ""
+    control: ""
+    command: |
+    lookup: ""
+    referential: ""
+
+
+
+## https://docs.jboss.org/author/display/AS72/Hardening%20Guidelines.html
+
+
+
+    # Etat de la configuration par défaut
+    # Journalisation des activités
+    # Granularité des journaux
+    # Privilège d'exécution
+    # Permissions des fichiers
+    # Légitimité et configuration des sources de données
+    # Configuration du chiffrement SSL / TLS
+    # Régénération des JSP
+    # Configuration des stacktrace

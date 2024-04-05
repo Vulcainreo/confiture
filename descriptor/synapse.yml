@@ -1,0 +1,28 @@
+---
+title: "Synapse"
+author: "Vulcainreo"
+version: "1.0"
+date: "March 2024"
+source: |
+  https://git.tommytran.io/ArcticFoxes-net/Synapse-Ubuntu-ZFS/commit/b7980530c6e52c70934ad4be486d60ab2f3d74a9
+tests:
+  - test:
+    id: ""
+    category: ""
+    control: ""
+    command: |
+    lookup: ""
+    referential: ""
+
+
+# Version du composant
+# Configuration de la journalisation
+# Segmentation des zones temporaires
+# Configuration des capacités
+# Configuration à risque des protections kernel
+# Privilège d'exécution
+# Exposition à risque du serveur et des espaces de discussion
+# Gestion du chiffrement à risque
+# Configuration à risque de la base de données
+# Divulgation à risque d'information
+# Journalisation des activités

@@ -8,7 +8,8 @@ tests:
     id: ""
     category: "Socle système"
     control: "OS supporté"
-    command: ""
+    command: |
+      Systeminfo > "System.Systeminfo.txt"
     lookup: ""
     referential: ""
 
@@ -16,7 +17,10 @@ tests:
     id: ""
     category: "Socle système"
     control: "Niveau des correctifs de sécurité"
-    command: ""
+    command: |
+      Systeminfo > "System.Systeminfo.txt"
+      wmic COMPUTERSYSTEM list FULL > "System.wmic.computersystem.txt"
+      wmic QFE > "System.wmic.qfe.txt"
     lookup: ""
     referential: ""
 
@@ -37,7 +41,9 @@ tests:
     id: ""
     category: "Compte et privilèges"
     control: Protection et défense"
-    command: ""
+    command: |
+      whoami /ALL > "User.whoami.txt"
+      secedit /export /CFG "Policy.secedit.export.txt"
     lookup: |
       Blocage / antibrutefoce
       Configuration de l’expiration à risque
@@ -49,7 +55,8 @@ tests:
     id: ""
     category: "Compte et privilèges"
     control: "Stockage"
-    command: ""
+    command: |
+      secedit /export /CFG "Policy.secedit.export.txt"
     lookup: |
       Stockage à risque
     referential: ""
@@ -65,9 +72,20 @@ tests:
 
   - test:
     id: ""
+    category: "Défense en profondeur"
+    control: "Stratégie de groupe"
+    command: |
+      gpresult /z /scope computer > "Policy.gpresult.txt"
+    lookup: |
+    referential: ""
+
+  - test:
+    id: ""
     category: "Surface d'attaque"
-    control: "Comptes illégitimes"
-    command: ""
+    control: "Comptes / groupes illégitimes"
+    command: |
+      net user > "Users.net_user.txt"
+      net localgroup > "Users.net_localgroup.txt"
     lookup: ""
     referential: ""
 
@@ -75,7 +93,12 @@ tests:
     id: ""
     category: "Surface d'attaque"
     control: "Services en écoute"
-    command: ""
+    command: |
+      netstat -an  > "Network.netstat.txt"
+      nbtstat -a %COMPUTERNAME% > "Network.nbtstat.txt"
+      ipconfig /all > "Network.ipconfig.txt"
+      route print > "Network.route.print.txt"
+      netsh dump > "Network.netsh.txt"
     lookup: ""
     referential: ""
 
@@ -84,7 +107,8 @@ tests:
     id: ""
     category: "Surface d'attaque"
     control: "Partage SMB"
-    command: ""
+    command: |
+      Get-SmbShare | ForEach-Object { [PSCustomObject]@{Name=$_.Name;Path=$_.Path;Description=$_.Description;ScopeName=$_.ScopeName;CurrentUserAccess=$_.CurrentUserAccess;ShareState=$_.ShareState;UserRights=(Get-SmbShareAccess -Name $_.Name | Select-Object @{Name="AccountName";Expression={$_.AccountName}},AccessControlType)}} > "Shares.wmic.share.txt"
     lookup: |
       exposition
       SMBv1 / Signature
@@ -94,7 +118,7 @@ tests:
   - test:
     id: ""
     category: "Surface d'attaque"
-    control: "Controle disstant"
+    control: "Controle distant"
     command: ""
     lookup: ""
     referential: ""
@@ -104,7 +128,10 @@ tests:
     id: ""
     category: "Surface d'attaque"
     control: "Chiffrement BitLocker"
-    command: ""
+    command: |
+      reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services" "Reg.HKLM.Services.dump.txt"
+      reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control" "Reg.HKLM.Control.dump.txt"
+      reg export "HKEY_LOCAL_MACHINE\SOFTWARE" "Reg.HKLM.Software.dump.txt"
     lookup: ""
     referential: ""
 
@@ -112,7 +139,9 @@ tests:
     id: ""
     category: "Surface d'attaque"
     control: "Services inutiles / illégitimes"
-    command: ""
+    command: |
+      wmic PROCESS list full >  "Processus.wmic.process.txt"
+      wmic SERVICE list FULL > "Services.wmic.service.txt"
     lookup: ""
     referential: ""
 
@@ -120,7 +149,10 @@ tests:
     id: ""
     category: "Surface d'attaque"
     control: "Tache planifiée illégitime"
-    command: ""
+    command: |
+      schtasks /query /v > "Tasks.schtasks.txt"
+      wmic JOB list FULL > "Tasks.wmic.job.txt"
+      at > "Tasks.at.txt"
     lookup: ""
     referential: ""
 
@@ -141,5 +173,14 @@ tests:
     category: "Défense en profondeur"
     control: "Etat et version Antivirus"
     command: ""
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Défense en profondeur"
+    control: "Firewall local"
+    command: |
+      netsh advfirewall firewall show rule name=all > "Network.netsh.rules.txt"
     lookup: ""
     referential: ""

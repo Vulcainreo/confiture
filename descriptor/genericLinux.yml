@@ -68,7 +68,7 @@ tests:
     command: "cat /etc/ssh/sshd_config.d/* > sshd2.txt"
     lookup: ""
     referential: ""
-    
+
   - test:
     id: ""
     category: "Authentification & autorisation"
@@ -273,5 +273,13 @@ tests:
     category: "Journalisation"
     control: "Droits d'accès aux journaux"
     command: "find /var/log -type f -exec ls -ailL {} \\; > varLog.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surveillance"
+    control: "Configuration SNMP"
+    command: "cat /etc/snmp/snmpd.conf"
     lookup: ""
     referential: ""
