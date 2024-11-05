@@ -14,6 +14,6 @@ content = ""
 for tests in yamlContent["tests"]:
     content += tests["command"]+"\n"
 
-outputFile = open("./generated/output.sh", 'w')
+outputFile = open("./output.sh", 'w')
 outputFile.write(content)
 outputFile.close()

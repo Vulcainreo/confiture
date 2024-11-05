@@ -15,8 +15,24 @@ tests:
   - test:
     id: ""
     category: "Système"
+    control: "Informations générales"
+    command: "lsblk >> lsblk.txt; lshw >> lshw.txt; lsmem >> lsmem.txt; lslocks >> lslocks.txt; lsns >> lsns.txt; lsmod >> lsmod.txt; lscpu >> lscpu.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Système"
     control: "Derniers correctifs"
     command: "cat /var/log/apt/history.log > update-apt.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Système"
+    control: "Source de mise à jour"
+    command: "tar cvf repo.tar.gz /etc/yum*"
     lookup: ""
     referential: ""
 
@@ -72,8 +88,16 @@ tests:
   - test:
     id: ""
     category: "Authentification & autorisation"
+    control: "Access"
+    command: "cat /etc/access.conf >> access.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Authentification & autorisation"
     control: "Configuration PAM"
-    command: "cat /etc/login.defs > logindef.txt; cat /etc/pam.d/* > pam.conf"
+    command: "cat /etc/login.defs > logindef.txt; cat /etc/pam.d/* > pam.conf; tar vcf pam.tar.gz /etc/pam.*"
     lookup: ""
     referential: ""
 
@@ -81,8 +105,16 @@ tests:
     id: ""
     category: "Surface d'attaque locale"
     control: "Application illégitime"
-    command: "dpkg -l > dpkg.txt; rpm -qa > dpkg.txt"
+    command: "dpkg -l >> dpkg.txt; rpm -qa >> dpkg.txt; rpmlist > rpmlist.txt"
     lookup: "grep 'gcc \\| g++"
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Surface d'attaque locale"
+    control: "GRUB"
+    command: "cat /etc/grub* >> grub.txt"
+    lookup: ""
     referential: ""
 
   - test:
@@ -200,7 +232,7 @@ tests:
     id: ""
     category: "Surface d'attaque locale"
     control: "Répertoires en écriture à tout le monde"
-    command: "find / -type d -perm -002 -exec ls -ailL {} \\; > worldWriteDir.txt"
+    command: "find / -type d -perm -002 -exec ls -ld {} \\; > worldWriteDir.txt"
     lookup: ""
     referential: ""
 
@@ -263,6 +295,14 @@ tests:
   - test:
     id: ""
     category: "Journalisation"
+    control: "Rotation des journaux"
+    command: "tar cvf logrotate.tar.gz /var/logrotate*"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Journalisation"
     control: "Synchronisation des temps"
     command: "cat /etc/ntp.conf > ntp.txt; cat /etc/chrony.conf > chrony.txt"
     lookup: ""
@@ -281,5 +321,21 @@ tests:
     category: "Surveillance"
     control: "Configuration SNMP"
     command: "cat /etc/snmp/snmpd.conf"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Defense en profondeur"
+    control: "USBguard"
+    command: "usbguard list-devices > usbguard_listdevices.txt"
+    lookup: ""
+    referential: ""
+
+  - test:
+    id: ""
+    category: "Defense en profondeur"
+    control: "SELINUX / AIDE"
+    command: "cat /etc/sestatus.conf >> selinux.txt; getenforce >> selinux.txt"
     lookup: ""
     referential: ""
